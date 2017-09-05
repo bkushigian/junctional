@@ -124,4 +124,11 @@ public class ListTest {
         assertEquals(expected, actual);
     }
 
+    @Test
+    public void testTakeWhile01(){
+        List<Integer> expected = new List<> (new Integer[] {0,1,2,3});
+        List<Integer> actual = l2.takeWhile(a -> a < 4);
+        assertEquals(expected, actual);
+    }
+
 }

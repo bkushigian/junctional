@@ -4,6 +4,22 @@ import java.util.function.Function;
 import java.lang.NullPointerException;
 
 public class ListUtil {
+
+    public static <X> List<X> intersperse(X x, List<X> xs){
+        if (xs == null) throw new NullPointerException();
+        if (xs.nil()) return xs;
+        if (xs.tail.nil()) return xs;
+        return intersperse(x, xs.tail).cons(x).cons(xs.head);
+    }
+
+    public static <X> List<X> concat(List<X> left, List<X> right){
+        if (left == null || right == null) throw new NullPointerException();
+        if (left.nil()) return right;
+        return concat(left.tail, right).cons(left.head);
+    }
+    public static <X> List<X> flatten(List<List<X>> xs) {
+        return null;
+    }
     public static <X,Y> List<Y> map(Function<X,Y> f, List<X> xs){
         if (xs == null) throw new NullPointerException();
         if (nil(xs)) return new List<Y>();

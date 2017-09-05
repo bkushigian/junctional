@@ -80,4 +80,18 @@ public class ListTest {
     public void testSize02(){
         assertEquals(4, l1.size());
     }
+
+
+    @Test
+    public void testFoldr01(){
+        assertEquals((Integer)6,
+                l1.foldr( (a, b) -> {return a + b;},
+                        new Integer(0)));
+    }
+
+    @Test
+    public void testFoldr02(){
+        Integer res = l2.foldr( (a,b) -> {return a + b;}, 0);
+        assertEquals((Integer)28, res);
+    }
 }

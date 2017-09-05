@@ -47,4 +47,37 @@ public class ListTest {
         assertNotEquals(l, l1);
         assertNotEquals(l1, l);
     }
+
+
+    @Test
+    public void testMap01(){
+        assertEquals(
+                new List<>(new Integer[] {1,2,3,4}),
+                l1.map(i -> i+1));
+    }
+
+    @Test
+    public void testMap02(){
+        assertEquals(
+                new List<>(new Integer[] { 0, -1 ,-2 ,-3}),
+                l1.map(i -> -i));
+    }
+
+    @Test
+    public void testMap03(){
+        assertEquals(
+                new List<>(new String[] {"0", "-1", "-2", "-3"}),
+                l1.map(i -> i.toString())
+        );
+    }
+
+    @Test
+    public void testSize01(){
+        assertEquals(0, nil.size());
+    }
+
+    @Test
+    public void testSize02(){
+        assertEquals(4, l1.size());
+    }
 }

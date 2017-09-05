@@ -68,6 +68,18 @@ public class List <T> {
         return head == null;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (obj instanceof List<?>) {
+            List<?> other = (List<?>) obj;
+            if (nil()) {
+                return other.nil();
+            }
+            return !other.nil() && tail.equals(other.tail);
+        }
+        return false;
+    }
+
     public String toString(){
         if (head == null) return "[]";
         StringBuilder sb = new StringBuilder("[" + head);
@@ -75,9 +87,6 @@ public class List <T> {
         return sb.toString();
     }
 
-    /**
-     * XXX: This is NOT a pure function
-     */
     private void toStringHelper(StringBuilder sb){
         if (head == null){
             sb.append("]");

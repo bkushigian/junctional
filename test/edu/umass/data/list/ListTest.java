@@ -94,4 +94,34 @@ public class ListTest {
         Integer res = l2.foldr( (a,b) -> {return a + b;}, 0);
         assertEquals((Integer)28, res);
     }
+
+    @Test
+    public void testTake01(){
+        List<Integer> expected = new List<Integer>(new Integer[] {0,1});
+        List<Integer> actual = l1.take(2);
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testTake02(){
+        List<Integer> expected = new List<Integer>();
+        List<Integer> actual = l1.take(0);
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testTake03(){
+        List<Integer> expected = new List<Integer>();
+        List<Integer> actual = expected.take(32);
+        assertEquals(expected, actual);
+    }
+
+
+    @Test
+    public void testFilter01(){
+        List<Integer> expected = new List<>( new Integer[] {0,2,4,6});
+        List<Integer> actual = l2.filter(a -> a % 2 == 0);
+        assertEquals(expected, actual);
+    }
+
 }

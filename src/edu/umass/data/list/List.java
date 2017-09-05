@@ -3,6 +3,7 @@ package edu.umass.data.list;
 import java.lang.StringBuilder;
 import java.util.function.Function;
 import java.util.function.BiFunction;
+import java.util.function.Predicate;
 
 /**
  * An immutable linked list implementation that allows for a functional style
@@ -92,11 +93,24 @@ public class List <T> {
         return tail.map(f).cons(f.apply(head));
     }
 
+    /**
+     * fold this list under folding function f
+     * @param f
+     * @param acc
+     * @param <Y>
+     * @return
+     */
     public <Y> Y foldr(BiFunction<T,Y,Y> f, Y acc){
         if (nil()){
             return acc;
         }
         return tail.foldr(f, f.apply(head, acc));
+    }
+
+    public List<T> filter(Predicate<T> p){
+        if (nil()) return this;
+        return p.test(head) ? tail.filter(p).cons(head)
+                            : tail.filter(p);
     }
 
     /**
@@ -113,6 +127,12 @@ public class List <T> {
      */
     public boolean nil(){
         return head == null;
+    }
+
+    public List<T> take(int n){
+        if (n < 1) return new List<>(); // empty list
+        if (nil()) return new List<>(); // empty list
+        return take(n - 1).cons(head);
     }
 
     @Override

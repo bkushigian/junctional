@@ -107,6 +107,11 @@ public class List <T> {
         return tail.foldr(f, f.apply(head, acc));
     }
 
+    /**
+     * Given predicate {@code p} return a list of all elements that satisfy {@code p}
+     * @param p predicate to satisfy
+     * @return list of elements in this that satisfy {@code p}
+     */
     public List<T> filter(Predicate<T> p){
         if (nil()) return this;
         return p.test(head) ? tail.filter(p).cons(head)
@@ -129,10 +134,26 @@ public class List <T> {
         return head == null;
     }
 
+    /**
+     * Take the first {@code min(n, size())} elements of the list
+     * @param n number of elements to take
+     * @return the list of values
+     */
     public List<T> take(int n){
         if (n < 1) return new List<>(); // empty list
         if (nil()) return new List<>(); // empty list
         return take(n - 1).cons(head);
+    }
+
+    /**
+     * Given a predicate {@code p}, take contiguous block of elements that satisfy
+     * {@code p}
+     * @param p predicate to satisfy
+     * @return first and largest contiguous block of elements that satisfy {@code p}
+     */
+    public List<T> takeWhile(Predicate<T> p){
+        if (nil()) return this;
+        return p.test(head) ? tail.takeWhile(p).cons(head) : new List<>();
     }
 
     @Override

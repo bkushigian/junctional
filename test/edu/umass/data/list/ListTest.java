@@ -81,7 +81,6 @@ public class ListTest {
         assertEquals(4, l1.size());
     }
 
-
     @Test
     public void testFoldr01(){
         assertEquals((Integer)6,

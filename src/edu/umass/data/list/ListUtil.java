@@ -18,7 +18,9 @@ public class ListUtil {
         return concat(left.tail, right).cons(left.head);
     }
     public static <X> List<X> flatten(List<List<X>> xs) {
-        return null;
+        if (xs == null) throw new NullPointerException();
+        if (xs.nil()) return new List<X>();
+        return concat(xs.head, flatten(xs.tail));
     }
     public static <X,Y> List<Y> map(Function<X,Y> f, List<X> xs){
         if (xs == null) throw new NullPointerException();

@@ -2,6 +2,7 @@ package edu.umass.data.list;
 
 import java.lang.StringBuilder;
 import java.util.function.Function;
+import java.util.function.BiFunction;
 
 /**
  * An immutable linked list implementation that allows for a functional style
@@ -89,6 +90,13 @@ public class List <T> {
     public <Y> List<Y> map(Function<T, Y> f){
         if (nil()) return new List<Y>();
         return tail.map(f).cons(f.apply(head));
+    }
+
+    public <Y> Y foldr(BiFunction<T,Y,Y> f, Y acc){
+        if (nil()){
+            return acc;
+        }
+        return tail.foldr(f, f.apply(head, acc));
     }
 
     /**

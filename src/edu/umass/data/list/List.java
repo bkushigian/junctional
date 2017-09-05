@@ -3,6 +3,16 @@ package edu.umass.data.list;
 import java.lang.StringBuilder;
 import java.util.function.Function;
 
+/**
+ * An immutable linked list implementation that allows for a functional style
+ * of programming to be demonstrated. This makes no claims about efficiency but
+ * should work for any small and medium sized tasks sent at it.
+ *
+ * Note that JVM doesn't do tail call optimization so recursive functions will
+ * be slow and possibly blow the stack if nested too deep.
+ *
+ * @param <T> Type of element in the list
+ */
 public class List <T> {
     public final T head;
     public final List<T> tail;
@@ -15,12 +25,21 @@ public class List <T> {
         tail  = null;
     }
 
+    /**
+     * Construct a singleton list
+     * @param head: value of singleton
+     */
     public List(T head){
         if (head == null) throw new NullPointerException();
         this.head = head;
         tail = new List<T>();
     }
 
+    /**
+     * Construct a list with head value and tail list
+     * @param head
+     * @param tail
+     */
     public List(T head, List<T> tail){
         if (head == null) throw new NullPointerException();
         if (tail  == null) throw new NullPointerException();
@@ -28,6 +47,10 @@ public class List <T> {
         this.tail = tail;
     }
 
+    /**
+     * Convenience function: Construct list from array
+     * @param vals
+     */
     public List(T[] vals){
         if (vals.length == 0){
             head = null;
@@ -47,23 +70,39 @@ public class List <T> {
         this.tail  = tail;
     }
 
+    /**
+     * Create a new list from this one w/ head value {@code val}
+     * @param val
+     * @return new list created, pointing at this
+     */
     public List<T> cons(T val) {
         return new List<>(val, this);
     }
 
-    /*
-     * Some Helper Methods
-     */
 
+    /**
+     * map this list under mapping {@code f}
+     * @param f Mapping to perform on each element of this list
+     * @param <Y> Domain type of {@code f}
+     * @return this list mapped under {@code f}
+     */
     public <Y> List<Y> map(Function<T, Y> f){
         if (nil()) return new List<Y>();
         return tail.map(f).cons(f.apply(head));
     }
 
+    /**
+     * Return the size of this list
+     * @return total number of non-nil nodes in this list
+     */
     public int size(){
         return head == null? 0 : 1 + tail.size();
     }
 
+    /**
+     * A predicate that tests if this list is empty (i.e., head == null)
+     * @return head == null;
+     */
     public boolean nil(){
         return head == null;
     }

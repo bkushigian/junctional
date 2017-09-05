@@ -26,4 +26,18 @@ public class ListUtilTest {
         assertEquals(left, right);
     }
 
+    @Test
+    public void testFlatten(){
+        List<Integer> l1 = ListUtil.range(0,3);
+        List<Integer> l2 = ListUtil.range(3,6);
+        List<Integer> l3 = ListUtil.range(6,9);
+        List<List<Integer>> toFlatten = new List<List<Integer>>()
+                .cons(l3)
+                .cons(l2)
+                .cons(l1);
+        List<Integer> expected = ListUtil.range(9);
+        List<Integer> actual = ListUtil.flatten(toFlatten);
+        assertEquals(expected,actual);
+    }
+
 }

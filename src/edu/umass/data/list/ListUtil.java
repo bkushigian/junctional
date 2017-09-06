@@ -1,5 +1,6 @@
 package edu.umass.data.list;
 
+import java.util.function.BiFunction;
 import java.util.function.Function;
 import java.lang.NullPointerException;
 
@@ -38,6 +39,13 @@ public class ListUtil {
         return xs.head == null; 
     }
 
+    public static <X,Y> Y foldr(BiFunction<X,Y,Y> f, Y acc, List<X> xs){
+        if (xs == null) throw new NullPointerException();
+        if (xs.nil()){
+            return acc;
+        }
+        return foldr(f, f.apply(xs.head, acc), xs.tail);
+    }
 
     public static List<Integer> range(int low, int hi){
         List<Integer> ll = new List<>();

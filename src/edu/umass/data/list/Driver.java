@@ -2,8 +2,9 @@ package edu.umass.data.list;
 
 import java.util.function.Function;
 
-public class Driver extends ListUtil{
+import static edu.umass.data.list.ListUtil.*;
 
+public class Driver{
     public static void main(String[] args){
         List<Integer> ll = new List<>();
         System.out.println(ll.toString());

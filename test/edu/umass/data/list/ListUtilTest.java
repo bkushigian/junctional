@@ -40,4 +40,21 @@ public class ListUtilTest {
         assertEquals(expected,actual);
     }
 
+    @Test
+    public void testMap(){
+        List<Integer> expected = new List<>(new Integer[] {1,2,3,4});
+        List<Integer> actual   = ListUtil.map((x -> x + 1), l1);
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testSize(){
+        assertEquals(4, ListUtil.size(l1));
+    }
+
+    @Test
+    public void testNil(){
+        assertTrue(nil.nil());
+    }
+
 }

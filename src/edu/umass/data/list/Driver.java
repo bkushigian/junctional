@@ -2,7 +2,7 @@ package edu.umass.data.list;
 
 import java.util.function.Function;
 
-public class Driver {
+public class Driver extends ListUtil{
 
     public static void main(String[] args){
         List<Integer> ll = new List<>();
@@ -18,13 +18,13 @@ public class Driver {
         System.out.println(ll.toString());
 
 
-        ll = ListUtil.map(i -> i + 1, ll);
+        ll = map(i -> i + 1, ll);
         System.out.println(ll.toString());
     
-        ll = ListUtil.range(32);
+        ll = range(32);
         System.out.println(ll);
 
-        System.out.println(ListUtil.filter(x -> x % 2 == 0, ll));
+        System.out.println(filter(x -> x % 2 == 0, ll));
 
     }
 

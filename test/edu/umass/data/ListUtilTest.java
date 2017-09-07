@@ -1,9 +1,9 @@
-package edu.umass.data.list;
+package edu.umass.data;
 
 import org.junit.Test;
 
 import static org.junit.Assert.*;
-import static edu.umass.data.list.ListUtil.*;
+import static edu.umass.data.ListUtil.*;
 
 public class ListUtilTest {
     List<Integer> nil = new List<>();

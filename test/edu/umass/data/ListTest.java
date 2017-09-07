@@ -1,4 +1,4 @@
-package edu.umass.data.list;
+package edu.umass.data;
 
 import org.junit.Before;
 import org.junit.Test;

@@ -1,4 +1,4 @@
-package edu.umass.data.list;
+package edu.umass.data;
 
 import java.lang.StringBuilder;
 import java.util.function.Function;

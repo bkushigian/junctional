@@ -1,10 +1,8 @@
-package edu.umass.data.list;
+package edu.umass.data;
 
-import java.util.function.Function;
+import static edu.umass.data.ListUtil.*;
 
-import static edu.umass.data.list.ListUtil.*;
-
-public class Driver{
+public class ListDriver {
     public static void main(String[] args){
         List<Integer> ll = new List<>();
         System.out.println(ll.toString());

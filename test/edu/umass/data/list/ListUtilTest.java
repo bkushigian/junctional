@@ -1,4 +1,12 @@
 package edu.umass.data.list;
+/**
+ * Tests against the ListUtil class. NOTE that all static methods from
+ * ListUtil are pulled into this namespace so that we can use map(f, xs)
+ * instead of ListUtil.map(f,xs). This is normally not a good idea but in
+ * the context of functional programming these are canonical functions
+ * and having to qualify them defeats the elegance that is garnered by
+ * their use.
+ */
 
 import org.junit.Test;
 

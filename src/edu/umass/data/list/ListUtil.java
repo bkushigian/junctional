@@ -64,4 +64,9 @@ public class ListUtil {
         if (xs == null) throw new NullPointerException();
         return xs.nil() ? xs : p.apply(xs.head) ? filter(p, xs.tail).cons(xs.head) : filter(p, xs.tail);
     }
+
+    public static<T> List<T> cons(T x, List<T> xs){
+        if (x == null || xs == null) throw new NullPointerException();
+        return new List<T>(x, xs);
+    }
 }

@@ -1,4 +1,6 @@
-package edu.umass.data;
+package edu.umass.examples;
+
+import edu.umass.data.List;
 
 import static edu.umass.data.ListUtil.*;
 

@@ -9,34 +9,34 @@ public class ListUtil {
     public static <X> List<X> intersperse(X x, List<X> xs){
         if (xs == null) throw new NullPointerException();
         if (xs.nil()) return xs;
-        if (xs.tail.nil()) return xs;
-        return intersperse(x, xs.tail).cons(x).cons(xs.head);
+        if (xs.tl.nil()) return xs;
+        return intersperse(x, xs.tl).cons(x).cons(xs.hd);
     }
 
     public static <X> List<X> concat(List<X> left, List<X> right){
         if (left == null || right == null) throw new NullPointerException();
         if (left.nil()) return right;
-        return concat(left.tail, right).cons(left.head);
+        return concat(left.tl, right).cons(left.hd);
     }
     public static <X> List<X> flatten(List<List<X>> xs) {
         if (xs == null) throw new NullPointerException();
         if (xs.nil()) return new List<X>();
-        return concat(xs.head, flatten(xs.tail));
+        return concat(xs.hd, flatten(xs.tl));
     }
     public static <X,Y> List<Y> map(Function<X,Y> f, List<X> xs){
         if (xs == null) throw new NullPointerException();
         if (nil(xs)) return new List<Y>();
 
-        return map(f, xs.tail).cons(f.apply(xs.head));
+        return map(f, xs.tl).cons(f.apply(xs.hd));
     }
 
     public static <T> int size(List<T> xs){
-        return xs.head == null ? 0 : 1 + size(xs.tail);
+        return xs.hd == null ? 0 : 1 + size(xs.tl);
     }
 
     public static <T> boolean nil(List<T> xs) { 
         if (xs == null) throw new NullPointerException();
-        return xs.head == null; 
+        return xs.hd == null;
     }
 
     public static <X,Y> Y foldr(BiFunction<X,Y,Y> f, Y acc, List<X> xs){
@@ -44,7 +44,7 @@ public class ListUtil {
         if (xs.nil()){
             return acc;
         }
-        return foldr(f, f.apply(xs.head, acc), xs.tail);
+        return foldr(f, f.apply(xs.hd, acc), xs.tl);
     }
 
     public static List<Integer> range(int low, int hi){
@@ -62,7 +62,7 @@ public class ListUtil {
 
     public static<T> List<T> filter(Function<T, Boolean> p, List<T> xs){
         if (xs == null) throw new NullPointerException();
-        return xs.nil() ? xs : p.apply(xs.head) ? filter(p, xs.tail).cons(xs.head) : filter(p, xs.tail);
+        return xs.nil() ? xs : p.apply(xs.hd) ? filter(p, xs.tl).cons(xs.hd) : filter(p, xs.tl);
     }
 
     public static<T> List<T> cons(T x, List<T> xs){

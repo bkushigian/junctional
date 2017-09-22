@@ -7,11 +7,12 @@ import static edu.umass.data.ListUtil.*;
  * {@code Node<T>, T, Node<T>}.
  *
  */
-public class BinTree<T> {
+public abstract class BinTree<T> {
 
     final public BinTree<T> left;
     final public BinTree<T> right;
     final public T val;
+    final protected int indent_depth = 4;
 
     protected BinTree(){
         this.left = null;
@@ -25,25 +26,6 @@ public class BinTree<T> {
         this.val = val;
     }
 
-    public class Leaf<T> extends BinTree<T> {
-        public Leaf(){
-            super();
-        }
-
-        @Override
-        public boolean isLeaf(){
-            return true;
-        }
-    }
-
-    public class Node<T> extends BinTree<T> {
-        public Node(BinTree<T> left, T val, BinTree<T> right){
-            super(left, val, right);
-            if (left == null || right == null || val == null) {
-                throw new NullPointerException("Received null pointer for BinTree constructor");
-            }
-        }
-    }
 
     public <X> List<X> in_order_map(Function<T,X> f){
         if (f == null)
@@ -61,4 +43,16 @@ public class BinTree<T> {
     public boolean isNode(){
         return !isLeaf();
     }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        toStringHelper(sb, 0);
+        return sb.toString();
+    }
+
+    public abstract <Y> BinTree<Y> map(Function<T, Y> f);
+    public abstract <Y> Y fold(Function<Y, Function<T, Function<Y, Y>> > f, Y acc);
+
+    protected abstract void toStringHelper(StringBuilder sb, int depth);
 }

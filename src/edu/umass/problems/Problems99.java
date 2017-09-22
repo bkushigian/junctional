@@ -2,6 +2,7 @@ package edu.umass.problems;
 import edu.umass.data.List;
 import edu.umass.data.Maybe;
 import edu.umass.data.Tuple;
+import edu.umass.data.Unit;
 import edu.umass.problems.helper.HowMany;
 import edu.umass.problems.helper.Single;
 import edu.umass.problems.helper.Multiple;
@@ -386,6 +387,7 @@ public class Problems99 {
 
     /**
      * Problem 31: isPrime.
+     * Difficulty: **
      * @param n
      * @return
      */
@@ -395,6 +397,7 @@ public class Problems99 {
 
     /**
      * Problem 32: gcd.
+     * Difficulty: **
      * @param a
      * @param b
      * @return
@@ -403,6 +406,84 @@ public class Problems99 {
         throw new NotImplementedException();
     }
 
+
+    /**
+     * Problem 33: coprime
+     * Difficulty: *
+     * @param a
+     * @param b
+     * @return
+     */
+    public boolean coprime(int a, int b){
+        throw new NotImplementedException();
+    }
+
+    /**
+     * Problem 34: totient
+     * Difficulty: **
+     * @param n
+     * @return
+     */
+    public int totient(int n){
+        throw new NotImplementedException();
+    }
+
+    /**
+     * Problem 35: primeFactors
+     * Difficulty: **
+     * @param n
+     * @return
+     */
+    public List<Integer> primeFactors(int n){
+        throw new NotImplementedException();
+    }
+
+    /**
+     * Problem 36: primeFactorsMult
+     * Difficulty: **
+     * @param n
+     * @return
+     */
+    public List<Tuple<Integer, Integer>> primeFactorsMult(int n){
+        throw new NotImplementedException();
+    }
+
+    // TODO: 37
+
+    // TODO: 38
+
+    /**
+     * Problem 39: primesInRange
+     * Difficulty: *
+     * @param lo
+     * @param hi
+     * @return
+     */
+    public List<Integer> primesInRange(int lo, int hi){
+        throw new NotImplementedException();
+    }
+
+
+    /**
+     * Problem 40: goldbach.
+     * Difficulty: **
+     * @param n
+     * @return
+     */
+    public Tuple<Integer, Integer> goldbach(int n){
+        throw new NotImplementedException();
+    }
+
+    /**
+     * Problem 41: printEvenGoldbachs
+     * Difficulty: **
+     * @param lo
+     * @param hi
+     * @return
+     */
+    public Unit printEvenGoldbachs(int lo, int hi){
+        throw new NotImplementedException();
+    }
     /* Questions 41 - 50:  */
     /* Questions 51 - 60:  */
     /* Questions 61 - 70:  */

@@ -16,22 +16,22 @@ public class ListTest {
     @Test
     public void testCons01(){
         List<Integer> l = nil.cons(1);
-        assertEquals((Integer)1, (Integer)l.head);
+        assertEquals((Integer)1, (Integer)l.hd);
     }
     @Test
     public void testCons02(){
         List<Integer> l = nil.cons(1).cons(2);
-        assertEquals((Integer)2, l.head);
-        assertEquals((Integer)1, l.tail.head);
-        assertEquals(null, l.tail.tail.head);
+        assertEquals((Integer)2, l.hd);
+        assertEquals((Integer)1, l.tl.hd);
+        assertEquals(null, l.tl.tl.hd);
     }
     @Test
     public void testCons03(){
         List<Integer> l = nil.cons(1).cons(2).cons(3);
-        assertEquals((Integer)3, l.head);
-        assertEquals((Integer)2, l.tail.head);
-        assertEquals((Integer)1, l.tail.tail.head);
-        assertEquals(null, l.tail.tail.tail.head);
+        assertEquals((Integer)3, l.hd);
+        assertEquals((Integer)2, l.tl.hd);
+        assertEquals((Integer)1, l.tl.tl.hd);
+        assertEquals(null, l.tl.tl.tl.hd);
     }
 
     @Test
@@ -73,12 +73,12 @@ public class ListTest {
 
     @Test
     public void testSize01(){
-        assertEquals(0, nil.size());
+        assertEquals(0, nil.length());
     }
 
     @Test
     public void testSize02(){
-        assertEquals(4, l1.size());
+        assertEquals(4, l1.length());
     }
 
     @Test

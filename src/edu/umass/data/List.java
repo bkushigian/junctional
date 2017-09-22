@@ -1,6 +1,10 @@
 package edu.umass.data;
 
+import edu.umass.data.helper.ListIter;
+
 import java.lang.StringBuilder;
+import java.util.Collection;
+import java.util.Iterator;
 import java.util.function.Function;
 import java.util.function.BiFunction;
 import java.util.function.Predicate;
@@ -10,21 +14,21 @@ import java.util.function.Predicate;
  * of programming to be demonstrated. This makes no claims about efficiency but
  * should work for any small and medium sized tasks sent at it.
  *
- * Note that JVM doesn't do tail call optimization so recursive functions will
+ * Note that JVM doesn't do tl call optimization so recursive functions will
  * be slow and possibly blow the stack if nested too deep.
  *
  * @param <T> Type of element in the list
  */
-public class List <T> {
-    public final T head;
-    public final List<T> tail;
+public class List <T> implements Collection{
+    protected final T hd;
+    protected final List<T> tl;
 
     /**
      * Construct an empty node
      */
     public List(){
-        head = null;
-        tail  = null;
+        hd = null;
+        tl = null;
     }
 
     /**
@@ -33,20 +37,20 @@ public class List <T> {
      */
     public List(T head){
         if (head == null) throw new NullPointerException();
-        this.head = head;
-        tail = new List<T>();
+        this.hd = head;
+        tl = new List<T>();
     }
 
     /**
-     * Construct a list with head value and tail list
+     * Construct a list with hd value and tl list
      * @param head
      * @param tail
      */
     public List(T head, List<T> tail){
         if (head == null) throw new NullPointerException();
         if (tail  == null) throw new NullPointerException();
-        this.head = head;
-        this.tail = tail;
+        this.hd = head;
+        this.tl = tail;
     }
 
     /**
@@ -55,8 +59,8 @@ public class List <T> {
      */
     public List(T[] vals){
         if (vals.length == 0){
-            head = null;
-            tail = null;
+            hd = null;
+            tl = null;
             return;
         }
 
@@ -68,12 +72,17 @@ public class List <T> {
             tail = new List<T>(vals[i], tail);
         }
 
-        this.head = vals[0];
-        this.tail  = tail;
+        this.hd = vals[0];
+        this.tl = tail;
     }
 
+    public Maybe<T> head(){
+        return nil() ? new Nothing<>() : new Just<>(hd);
+    }
+    public Maybe<List<T>> tail() { return nil()? new Nothing() : new Just<>(tl);}
+
     /**
-     * Create a new list from this one w/ head value {@code val}
+     * Create a new list from this one w/ hd value {@code val}
      * @param val
      * @return new list created, pointing at this
      */
@@ -90,7 +99,7 @@ public class List <T> {
      */
     public <Y> List<Y> map(Function<T, Y> f){
         if (nil()) return new List<Y>();
-        return tail.map(f).cons(f.apply(head));
+        return tl.map(f).cons(f.apply(hd));
     }
 
     /**
@@ -104,7 +113,7 @@ public class List <T> {
         if (nil()){
             return acc;
         }
-        return tail.foldr(f, f.apply(head, acc));
+        return tl.foldr(f, f.apply(hd, acc));
     }
 
     /**
@@ -114,35 +123,35 @@ public class List <T> {
      */
     public List<T> filter(Predicate<T> p){
         if (nil()) return this;
-        return p.test(head) ? tail.filter(p).cons(head)
-                            : tail.filter(p);
+        return p.test(hd) ? tl.filter(p).cons(hd)
+                            : tl.filter(p);
     }
 
     /**
-     * Return the size of this list
+     * Return the length of this list
      * @return total number of non-nil nodes in this list
      */
-    public int size(){
-        return head == null? 0 : 1 + tail.size();
+    public int length(){
+        return hd == null? 0 : 1 + tl.length();
     }
 
     /**
-     * A predicate that tests if this list is empty (i.e., head == null)
-     * @return head == null;
+     * A predicate that tests if this list is empty (i.e., hd == null)
+     * @return hd == null;
      */
     public boolean nil(){
-        return head == null;
+        return hd == null;
     }
 
     /**
-     * Take the first {@code min(n, size())} elements of the list
+     * Take the first {@code min(n, length())} elements of the list
      * @param n number of elements to take
      * @return the list of values
      */
     public List<T> take(int n){
         if (n < 1) return new List<>(); // empty list
         if (nil()) return new List<>(); // empty list
-        return take(n - 1).cons(head);
+        return take(n - 1).cons(hd);
     }
 
     /**
@@ -153,9 +162,14 @@ public class List <T> {
      */
     public List<T> takeWhile(Predicate<T> p){
         if (nil()) return this;
-        return p.test(head) ? tail.takeWhile(p).cons(head) : new List<>();
+        return p.test(hd) ? tl.takeWhile(p).cons(hd) : new List<>();
     }
 
+    /**
+     * Check if this list equals another list
+     * @param obj
+     * @return
+     */
     @Override
     public boolean equals(Object obj) {
         if (obj instanceof List<?>) {
@@ -163,24 +177,113 @@ public class List <T> {
             if (nil()) {
                 return other.nil();
             }
-            return !other.nil() && tail.equals(other.tail);
+            return !other.nil() && tl.equals(other.tl);
         }
         return false;
     }
 
     public String toString(){
-        if (head == null) return "[]";
-        StringBuilder sb = new StringBuilder("[" + head);
-        tail.toStringHelper(sb);
+        if (hd == null) return "[]";
+        StringBuilder sb = new StringBuilder("[" + hd);
+        tl.toStringHelper(sb);
         return sb.toString();
     }
 
     private void toStringHelper(StringBuilder sb){
-        if (head == null){
+        if (hd == null){
             sb.append("]");
         } else{
-            sb.append("," + head);
-            tail.toStringHelper(sb);
+            sb.append("," + hd);
+            tl.toStringHelper(sb);
         }
+    }
+
+
+    /* Collection API */
+
+
+    @Override
+    public int size() {
+        return length();
+    }
+
+    @Override
+    public boolean isEmpty() {
+        return nil();
+    }
+
+    @Override
+    public boolean contains(Object o) {
+        return !nil() && (hd.equals(o) || tl.contains(o));
+    }
+
+    @Override
+    public Iterator iterator() {
+        return new ListIter(this);
+    }
+
+    @Override
+    public Object[] toArray() {
+        return toArrayHelper(0);
+    }
+    protected Object[] toArrayHelper(int size){
+        if (nil()){
+            // Create new array
+            Object[] result = new Object[size];
+            return result;
+        }
+        Object[] result = tl.toArrayHelper(size + 1);
+        result[size] = hd;
+        return result;
+    }
+
+    @Override
+    public boolean add(Object o) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override
+    public boolean remove(Object o) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override
+    public boolean addAll(Collection c) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override
+    public void clear() {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override
+    public boolean retainAll(Collection c) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override
+    public boolean removeAll(Collection c) {
+        throw new UnsupportedOperationException();
+    }
+
+    /**
+     * TODO
+     * @param c
+     * @return
+     */
+    @Override
+    public boolean containsAll(Collection c) {
+        return false;
+    }
+
+    /**
+     * TODO
+     * @param a
+     * @return
+     */
+    @Override
+    public Object[] toArray(Object[] a) {
+        return new Object[0];
     }
 }

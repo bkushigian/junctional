@@ -5,6 +5,7 @@ import edu.umass.data.Tuple;
 import edu.umass.problems.helper.HowMany;
 import edu.umass.problems.helper.Single;
 import edu.umass.problems.helper.Multiple;
+import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 /**
  * This is a rough take on the 99 Haskell Problems (and 99 Prolog Problems
@@ -236,5 +237,177 @@ public class Problems99 {
     public<T> List<T> repli(List<T> ts, int n){
         throw new RuntimeException("repli is not implemented");
     }
+
+    /**
+     * Problem 16: dropEveryN.
+     * @param ts
+     * @param n
+     * @param <T>
+     * @return
+     */
+    public<T> List<T> dropEveryN(List<T> ts, int n){
+        throw new RuntimeException("dropEveryN is not implemented");
+    }
+
+    /**
+     * Problem 17: splitAtN.
+     * @param ts
+     * @param n
+     * @param <T>
+     * @return
+     */
+    public <T> Tuple<List<T>, List<T>> splitAtN(List<T> ts, int n){
+        throw new RuntimeException("splitByN is not implemented");
+    }
+
+    /**
+     * Problem 18: slice.
+     * @param ts
+     * @param lo
+     * @param hi
+     * @param <T>
+     * @return
+     */
+    public<T> List<T> slice(List<T> ts, int lo, int hi){
+        throw new RuntimeException("slice is not implemented");
+    }
+
+    /**
+     * Problem 19: rotate.
+     * @param ts
+     * @param n
+     * @param <T>
+     * @return
+     */
+    public<T> List<T> rotate(List<T> ts, int n){
+        throw new RuntimeException("rotate is not implemented");
+    }
+
+    /**
+     * Problem 20: removeAt.
+     * @param xs
+     * @param n
+     * @param <T>
+     * @return
+     */
+    public<T> List<T> removeAt(List<T> xs, int n){
+        throw new RuntimeException("removeAt is not implemented");
+    }
+
+    /* Questions 21 - 28: Advanced Lists */
+
+    /**
+     * Problem 21: insertAt.
+     * @param xs
+     * @param elem
+     * @param pos
+     * @param <T>
+     * @return
+     */
+    public<T> List<T> insertAt(List<T> xs, T elem, int pos){
+        throw new RuntimeException("insertAt is not implemented");
+    }
+
+    /**
+     * Problem 22: range.
+     * @param lo
+     * @param hi
+     * @param <T>
+     * @return
+     */
+    public<T> List<Integer> range(int lo, int hi){
+        throw new RuntimeException("range is not implemented");
+    }
+
+    /**
+     * Problem 23: rndSelect.
+     * @param n
+     * @param <T>
+     * @return
+     */
+    public<T> List<T> rndSelect(List<T> ts, int n){
+        throw new RuntimeException("rndSelect is not implemented");
+    }
+
+    /**
+     * Problem 24: rndDraw.
+     * @param ts
+     * @param count
+     * @param hi
+     * @param <T>
+     * @return
+     */
+    public<T> List<T> rndDraw(List<T> ts, int count, int hi){
+        throw new RuntimeException("rndDraw is not implemented");
+    }
+
+    /**
+     * Problem 25: rndPermutation.
+     * @param ts
+     * @param <T>
+     * @return
+     */
+    public <T> List<T> rndPermutation(List<T> ts){
+        throw new RuntimeException("rndPermutation is not implemented");
+    }
+
+    /**
+     * Problem 26: combinations.
+     * @param ts
+     * @param <T>
+     * @return
+     */
+    public <T> List<T> combinations(List<T> ts){
+        throw new RuntimeException("combinations is not implemented");
+    }
+
+    /**
+     * Problem 27: multinomialGroupings.
+     * @param groupSizes
+     * @param elements
+     * @param <T>
+     * @return
+     */
+    public <T> List<T> multinomialGroupings(List<Integer> groupSizes, List<T> elements){
+        throw new RuntimeException("multinomialGroupings is not implemented");
+    }
+
+    /**
+     * Problem 28: lengthSort
+     * @param ts
+     * @param <T>
+     * @return
+     */
+    public<T> List<List<T>> lengthSort(List<List<T>> ts){
+        throw new RuntimeException("lengthSort is not yet implemented");
+    }
+
+    /* Questions 31 - 41: Arithmetic */
+
+    /**
+     * Problem 31: isPrime.
+     * @param n
+     * @return
+     */
+    public boolean isPrime(int n){
+        throw new RuntimeException("isPrime is not implemented");
+    }
+
+    /**
+     * Problem 32: gcd.
+     * @param a
+     * @param b
+     * @return
+     */
+    public int gcd(int a, int b){
+        throw new NotImplementedException();
+    }
+
+    /* Questions 41 - 50:  */
+    /* Questions 51 - 60:  */
+    /* Questions 61 - 70:  */
+    /* Questions 71 - 60:  */
+    /* Questions 81 - 70:  */
+    /* Questions 91 - 99:  */
 
 }

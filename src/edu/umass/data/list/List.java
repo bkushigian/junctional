@@ -1,13 +1,11 @@
 package edu.umass.data.list;
 
 import edu.umass.data.helper.ListIter;
-import edu.umass.data.maybe.Just;
-import edu.umass.data.maybe.Maybe;
-import edu.umass.data.maybe.Nothing;
 
 import java.lang.StringBuilder;
 import java.util.Collection;
 import java.util.Iterator;
+import java.util.Optional;
 import java.util.function.Function;
 import java.util.function.BiFunction;
 import java.util.function.Predicate;
@@ -79,10 +77,12 @@ public class List <T> implements Collection{
         this.tl = tail;
     }
 
-    public Maybe<T> head(){
-        return nil() ? new Nothing<>() : new Just<>(hd);
+    public Optional<T> head(){
+        return nil() ? Optional.empty() : Optional.of(hd);
     }
-    public Maybe<List<T>> tail() { return nil()? new Nothing() : new Just<>(tl);}
+    public Optional<List<T>> tail() {
+        return nil()? Optional.empty() : Optional.of(tl);
+    }
 
     /**
      * Create a new list from this one w/ hd value {@code val}

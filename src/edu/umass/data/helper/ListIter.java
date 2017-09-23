@@ -1,10 +1,9 @@
 package edu.umass.data.helper;
-import edu.umass.data.maybe.Just;
 import edu.umass.data.list.List;
-import edu.umass.data.maybe.Maybe;
 
 import java.util.Iterator;
 import java.util.NoSuchElementException;
+import java.util.Optional;
 
 public class ListIter<E> implements Iterator<E> {
 
@@ -24,11 +23,11 @@ public class ListIter<E> implements Iterator<E> {
 
     @Override
     public E next() {
-        Maybe<E> maybe = xs.head();
-        if (maybe.isNothing()){
-            throw new NoSuchElementException();
+        Optional<E> hd = xs.head();
+        if (hd.isPresent()){
+            xs = (List<E>)xs.tail().get();
+            return (E)hd.get();
         }
-        xs = ((Just<List<E>>)xs.tail()).fromJust();
-        return ((Just<E>)maybe).fromJust();
+        throw new NoSuchElementException();
     }
 }

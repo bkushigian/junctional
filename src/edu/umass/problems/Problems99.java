@@ -1,10 +1,11 @@
 package edu.umass.problems;
 import edu.umass.data.list.List;
-import edu.umass.data.maybe.Maybe;
 import edu.umass.data.tuple.Tuple2;
 import edu.umass.data.Unit;
 import edu.umass.problems.helper.HowMany;
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
+
+import java.util.Optional;
 
 /**
  * This is a rough take on the 99 Haskell Problems (and 99 Prolog Problems
@@ -33,7 +34,7 @@ public class Problems99 {
      * @return last element in the list wrapped in {@code Just} if it exists;
      *         otherwise return {@code Nothing}
      */
-    public <T> Maybe<T> findLast(List<T> ts){
+    public <T> Optional<T> findLast(List<T> ts){
         throw new RuntimeException("findLast not implemented");
     }
 
@@ -49,7 +50,7 @@ public class Problems99 {
      * @return second to last element in the list wrapped in {@code Just} if it
      *         exists; otherwise return {@code Nothing}
      */
-    public <T> Maybe<T> findButLast(List<T> ts){
+    public <T> Optional<T> findButLast(List<T> ts){
         throw new RuntimeException("findButLast not implemented");
     }
 
@@ -65,7 +66,7 @@ public class Problems99 {
      * @return Return the kth element of {@code ts} wrapped in a {@code Just}
      *         if it exists; other wise return {@code Nothing}
      */
-    public <T> Maybe<T> elementAt(List<T> ts, int k){
+    public <T> Optional<T> elementAt(List<T> ts, int k){
         throw new RuntimeException("elementAt not implemented");
     }
 

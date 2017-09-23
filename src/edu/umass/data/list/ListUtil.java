@@ -1,10 +1,18 @@
 package edu.umass.data.list;
-
+import java.util.Optional;
 import java.util.function.BiFunction;
 import java.util.function.Function;
 import java.lang.NullPointerException;
 
 public class ListUtil {
+
+    public static <X> Optional<X> head(List<X> xs){
+        return xs.head();
+    }
+
+    public static <X> Optional<List<X>> tail(List<X> xs){
+        return xs.tail();
+    }
 
     public static <X> List<X> intersperse(X x, List<X> xs){
         if (xs == null) throw new NullPointerException();

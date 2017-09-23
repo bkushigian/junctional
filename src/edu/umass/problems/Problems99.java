@@ -1,6 +1,6 @@
 package edu.umass.problems;
 import edu.umass.data.list.List;
-import edu.umass.data.tuple.Tuple2;
+import edu.umass.data.tuple.Pair;
 import edu.umass.data.Unit;
 import edu.umass.problems.helper.HowMany;
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
@@ -165,14 +165,14 @@ public class Problems99 {
     /**
      * Problem 10: encode. Given a list of type T, represent each run of n
      * consecutive elements {@code e} that are identical (n >= 1) as a tuple
-     * {@code Tuple2<T,Integer>(e, n)}.
+     * {@code Pair<T,Integer>(e, n)}.
      *
-     * Example: {@code encode([1,1,2,2,2,3]) -> [Tuple2(1,2), Tuple2(2,3), Tuple2(3,1)]}
+     * Example: {@code encode([1,1,2,2,2,3]) -> [Pair(1,2), Pair(2,3), Pair(3,1)]}
      * @param ts List to encode
      * @param <T>
      * @return Encoded list
      */
-    public<T> List<Tuple2<T,Integer>> encode(List<T> ts){
+    public<T> List<Pair<T,Integer>> encode(List<T> ts){
         throw new RuntimeException("encode is not implemented");
     }
 
@@ -256,7 +256,7 @@ public class Problems99 {
      * @param <T>
      * @return
      */
-    public <T> Tuple2<List<T>, List<T>> splitAtN(List<T> ts, int n){
+    public <T> Pair<List<T>, List<T>> splitAtN(List<T> ts, int n){
         throw new RuntimeException("splitByN is not implemented");
     }
 
@@ -443,7 +443,7 @@ public class Problems99 {
      * @param n
      * @return
      */
-    public List<Tuple2<Integer, Integer>> primeFactorsMult(int n){
+    public List<Pair<Integer, Integer>> primeFactorsMult(int n){
         throw new NotImplementedException();
     }
 
@@ -469,7 +469,7 @@ public class Problems99 {
      * @param n
      * @return
      */
-    public Tuple2<Integer, Integer> goldbach(int n){
+    public Pair<Integer, Integer> goldbach(int n){
         throw new NotImplementedException();
     }
 

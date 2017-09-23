@@ -1,4 +1,4 @@
-package edu.umass.data;
+package edu.umass.data.container;
 
 import java.util.Collections;
 import java.util.function.Function;

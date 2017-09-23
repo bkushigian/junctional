@@ -1,4 +1,4 @@
-package edu.umass.data;
+package edu.umass.data.container;
 
 import java.util.function.BiFunction;
 import java.util.function.Function;

@@ -1,6 +1,6 @@
 package edu.umass.data.helper;
 import edu.umass.data.maybe.Just;
-import edu.umass.data.List;
+import edu.umass.data.container.List;
 import edu.umass.data.maybe.Maybe;
 
 import java.util.Iterator;

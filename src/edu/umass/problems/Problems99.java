@@ -1,5 +1,5 @@
 package edu.umass.problems;
-import edu.umass.data.List;
+import edu.umass.data.container.List;
 import edu.umass.data.maybe.Maybe;
 import edu.umass.data.Tuple;
 import edu.umass.data.Unit;

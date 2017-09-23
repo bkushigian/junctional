@@ -1,8 +1,7 @@
 package edu.umass.examples;
-import edu.umass.data.BinTree;
-import edu.umass.data.BinTreeNode;
-import edu.umass.data.BinTreeLeaf;
-import edu.umass.data.List;
+import edu.umass.data.container.BinTree;
+import edu.umass.data.container.BinTreeNode;
+import edu.umass.data.container.BinTreeLeaf;
 
 public class BinTreeDriver {
     public static void main(String[] args){

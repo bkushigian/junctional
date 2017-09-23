@@ -1,8 +1,8 @@
 package edu.umass.examples;
 
-import edu.umass.data.List;
+import edu.umass.data.container.List;
 
-import static edu.umass.data.ListUtil.*;
+import static edu.umass.data.container.ListUtil.*;
 
 public class ListDriver {
     public static void main(String[] args){

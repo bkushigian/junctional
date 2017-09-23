@@ -1,5 +1,6 @@
-package edu.umass.data;
+package edu.umass.data.container;
 
+import edu.umass.data.container.List;
 import org.junit.Before;
 import org.junit.Test;
 

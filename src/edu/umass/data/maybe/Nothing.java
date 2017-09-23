@@ -1,4 +1,4 @@
-package edu.umass.data;
+package edu.umass.data.maybe;
 
 public class Nothing<T> extends Maybe<T> {
     @Override

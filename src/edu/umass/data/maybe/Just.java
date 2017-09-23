@@ -1,4 +1,4 @@
-package edu.umass.data;
+package edu.umass.data.maybe;
 
 public class Just<T> extends Maybe<T>{
     private final T val;

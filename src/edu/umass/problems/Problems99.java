@@ -1,11 +1,9 @@
 package edu.umass.problems;
 import edu.umass.data.List;
-import edu.umass.data.Maybe;
+import edu.umass.data.maybe.Maybe;
 import edu.umass.data.Tuple;
 import edu.umass.data.Unit;
 import edu.umass.problems.helper.HowMany;
-import edu.umass.problems.helper.Single;
-import edu.umass.problems.helper.Multiple;
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 /**

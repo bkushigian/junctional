@@ -1,7 +1,7 @@
 package edu.umass.data.helper;
-import edu.umass.data.Just;
+import edu.umass.data.maybe.Just;
 import edu.umass.data.List;
-import edu.umass.data.Maybe;
+import edu.umass.data.maybe.Maybe;
 
 import java.util.Iterator;
 import java.util.NoSuchElementException;

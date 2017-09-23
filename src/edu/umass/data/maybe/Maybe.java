@@ -1,4 +1,4 @@
-package edu.umass.data;
+package edu.umass.data.maybe;
 
 public abstract class Maybe<T> {
     public abstract boolean isNothing();

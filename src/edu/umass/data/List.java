@@ -1,6 +1,9 @@
 package edu.umass.data;
 
 import edu.umass.data.helper.ListIter;
+import edu.umass.data.maybe.Just;
+import edu.umass.data.maybe.Maybe;
+import edu.umass.data.maybe.Nothing;
 
 import java.lang.StringBuilder;
 import java.util.Collection;

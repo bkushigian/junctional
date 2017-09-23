@@ -1,10 +1,10 @@
-package edu.umass.data.container;
+package edu.umass.data.list;
 
-import edu.umass.data.container.List;
+import edu.umass.data.list.List;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
-import static edu.umass.data.container.ListUtil.*;
+import static edu.umass.data.list.ListUtil.*;
 
 public class ListUtilTest {
     List<Integer> nil = new List<>();

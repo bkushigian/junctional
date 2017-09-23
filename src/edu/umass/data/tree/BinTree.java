@@ -1,6 +1,8 @@
-package edu.umass.data.container;
+package edu.umass.data.tree;
+import edu.umass.data.list.List;
+
 import java.util.function.*;
-import static edu.umass.data.container.ListUtil.*;
+import static edu.umass.data.list.ListUtil.*;
 
 /**
  * Implementation of a binary tree. A {@code BinTree} can either be a {@code Leaf} or a

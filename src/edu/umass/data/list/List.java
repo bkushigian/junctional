@@ -1,4 +1,4 @@
-package edu.umass.data.container;
+package edu.umass.data.list;
 
 import edu.umass.data.helper.ListIter;
 import edu.umass.data.maybe.Just;

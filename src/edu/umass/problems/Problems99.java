@@ -35,7 +35,7 @@ public class Problems99 {
      *         otherwise return {@code Nothing}
      */
     public <T> Optional<T> findLast(List<T> ts){
-        throw new RuntimeException("findLast not implemented");
+        throw new NotImplementedException();
     }
 
     /**
@@ -51,7 +51,7 @@ public class Problems99 {
      *         exists; otherwise return {@code Nothing}
      */
     public <T> Optional<T> findButLast(List<T> ts){
-        throw new RuntimeException("findButLast not implemented");
+        throw new NotImplementedException();
     }
 
     /**
@@ -67,7 +67,7 @@ public class Problems99 {
      *         if it exists; other wise return {@code Nothing}
      */
     public <T> Optional<T> elementAt(List<T> ts, int k){
-        throw new RuntimeException("elementAt not implemented");
+        throw new NotImplementedException();
     }
 
     /**
@@ -81,7 +81,7 @@ public class Problems99 {
      * @return number of elements in ts
      */
     public <T> int length(List<T> ts){
-        throw new RuntimeException("length not implemented");
+        throw new NotImplementedException();
     }
 
     /**
@@ -96,7 +96,7 @@ public class Problems99 {
      * @return ts reversed
      */
     public <T> List<T> reverseList(List<T> ts){
-        throw new RuntimeException("reverseList not implemented");
+        throw new NotImplementedException();
     }
 
     /**
@@ -111,7 +111,7 @@ public class Problems99 {
      * @return true iff ts is a palindrome
      */
     public<T> boolean isPalindrome(List<T> ts) {
-        throw new RuntimeException("isPalindrome is not implemented");
+        throw new NotImplementedException();
     }
 
     /**
@@ -127,7 +127,7 @@ public class Problems99 {
      * @return Flattened list
      */
     public<T> List<T> flattenList(List<List<T>> ts){
-        throw new RuntimeException("flattenList is not implemented");
+        throw new NotImplementedException();
     }
 
     /**
@@ -143,7 +143,7 @@ public class Problems99 {
      * @return the compressed list
      */
     public<T> List<T> compress(List<T> ts){
-        throw new RuntimeException("compress is not implemented");
+        throw new NotImplementedException();
 
     }
 
@@ -159,7 +159,7 @@ public class Problems99 {
      * @return packed list
      */
     public<T> List<List<T>> packConsecutive(List<T> ts){
-        throw new RuntimeException("packConsecutive is not implemented");
+        throw new NotImplementedException();
     }
 
     /**
@@ -173,7 +173,7 @@ public class Problems99 {
      * @return Encoded list
      */
     public<T> List<Pair<T,Integer>> encode(List<T> ts){
-        throw new RuntimeException("encode is not implemented");
+        throw new NotImplementedException();
     }
 
     /* Questions 11 - 20: Intermediate Lists */
@@ -191,7 +191,7 @@ public class Problems99 {
      * @return
      */
     public<T> List<HowMany<T>> encodeModified(List<T> ts){
-        throw new RuntimeException("encodeModified is not implemented");
+        throw new NotImplementedException();
     }
 
     /**
@@ -205,7 +205,7 @@ public class Problems99 {
      * @return
      */
     public <T> List<T> decodeModified(List<HowMany<T>> ts){
-        throw new RuntimeException("decodeModified is not implemented");
+        throw new NotImplementedException();
     }
 
     // TODO: Problem 13
@@ -220,7 +220,7 @@ public class Problems99 {
      * @return doubled list
      */
     public<T> List<T> dupli(List<T> ts){
-        throw new RuntimeException("dupli is not implemented");
+        throw new NotImplementedException();
     }
 
 
@@ -235,7 +235,7 @@ public class Problems99 {
      * @return
      */
     public<T> List<T> repli(List<T> ts, int n){
-        throw new RuntimeException("repli is not implemented");
+        throw new NotImplementedException();
     }
 
     /**
@@ -246,7 +246,7 @@ public class Problems99 {
      * @return
      */
     public<T> List<T> dropEveryN(List<T> ts, int n){
-        throw new RuntimeException("dropEveryN is not implemented");
+        throw new NotImplementedException();
     }
 
     /**
@@ -257,7 +257,7 @@ public class Problems99 {
      * @return
      */
     public <T> Pair<List<T>, List<T>> splitAtN(List<T> ts, int n){
-        throw new RuntimeException("splitByN is not implemented");
+        throw new NotImplementedException();
     }
 
     /**
@@ -269,7 +269,7 @@ public class Problems99 {
      * @return
      */
     public<T> List<T> slice(List<T> ts, int lo, int hi){
-        throw new RuntimeException("slice is not implemented");
+        throw new NotImplementedException();
     }
 
     /**
@@ -280,7 +280,7 @@ public class Problems99 {
      * @return
      */
     public<T> List<T> rotate(List<T> ts, int n){
-        throw new RuntimeException("rotate is not implemented");
+        throw new NotImplementedException();
     }
 
     /**
@@ -291,7 +291,7 @@ public class Problems99 {
      * @return
      */
     public<T> List<T> removeAt(List<T> xs, int n){
-        throw new RuntimeException("removeAt is not implemented");
+        throw new NotImplementedException();
     }
 
     /* Questions 21 - 28: Advanced Lists */
@@ -305,7 +305,7 @@ public class Problems99 {
      * @return
      */
     public<T> List<T> insertAt(List<T> xs, T elem, int pos){
-        throw new RuntimeException("insertAt is not implemented");
+        throw new NotImplementedException();
     }
 
     /**
@@ -316,7 +316,7 @@ public class Problems99 {
      * @return
      */
     public<T> List<Integer> range(int lo, int hi){
-        throw new RuntimeException("range is not implemented");
+        throw new NotImplementedException();
     }
 
     /**
@@ -326,7 +326,7 @@ public class Problems99 {
      * @return
      */
     public<T> List<T> rndSelect(List<T> ts, int n){
-        throw new RuntimeException("rndSelect is not implemented");
+        throw new NotImplementedException();
     }
 
     /**
@@ -338,7 +338,7 @@ public class Problems99 {
      * @return
      */
     public<T> List<T> rndDraw(List<T> ts, int count, int hi){
-        throw new RuntimeException("rndDraw is not implemented");
+        throw new NotImplementedException();
     }
 
     /**
@@ -348,7 +348,7 @@ public class Problems99 {
      * @return
      */
     public <T> List<T> rndPermutation(List<T> ts){
-        throw new RuntimeException("rndPermutation is not implemented");
+        throw new NotImplementedException();
     }
 
     /**
@@ -358,7 +358,7 @@ public class Problems99 {
      * @return
      */
     public <T> List<T> combinations(List<T> ts){
-        throw new RuntimeException("combinations is not implemented");
+        throw new NotImplementedException();
     }
 
     /**
@@ -369,7 +369,7 @@ public class Problems99 {
      * @return
      */
     public <T> List<T> multinomialGroupings(List<Integer> groupSizes, List<T> elements){
-        throw new RuntimeException("multinomialGroupings is not implemented");
+        throw new NotImplementedException();
     }
 
     /**
@@ -379,7 +379,7 @@ public class Problems99 {
      * @return
      */
     public<T> List<List<T>> lengthSort(List<List<T>> ts){
-        throw new RuntimeException("lengthSort is not yet implemented");
+        throw new NotImplementedException();
     }
 
     /* Questions 31 - 41: Arithmetic */
@@ -391,7 +391,7 @@ public class Problems99 {
      * @return
      */
     public boolean isPrime(int n){
-        throw new RuntimeException("isPrime is not implemented");
+        throw new NotImplementedException();
     }
 
     /**
